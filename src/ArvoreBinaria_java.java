@@ -48,4 +48,17 @@ public class ArvoreBinaria_java<T extends Comparable<T>> {
             System.out.println(atual.getConteudo() + " ,");
         }
     }
+
+    public void exibirPreOrdem() {
+        System.out.println("\n Exibindo pre ordem");
+        exibirPreOrdem(this.raiz);
+    }
+
+    public void exibirPreOrdem(BinNo<T> atual) {
+        if (atual != null) {
+            System.out.println(atual.getConteudo() + " ,");
+            exibirEmOrdem(atual.getNoEsq());
+            exibirEmOrdem(atual.getNoDir());
+        }
+    }
 }
