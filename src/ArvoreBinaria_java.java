@@ -36,5 +36,16 @@ public class ArvoreBinaria_java<T extends Comparable<T>> {
         }
     }
 
+    public void exibirPosOrdem() {
+        System.out.println("\n Exibindo pos ordem");
+        exibirPosOrdem(this.raiz);
+    }
 
+    public void exibirPosOrdem(BinNo<T> atual) {
+        if (atual != null) {
+            exibirEmOrdem(atual.getNoEsq());
+            exibirEmOrdem(atual.getNoDir());
+            System.out.println(atual.getConteudo() + " ,");
+        }
+    }
 }
