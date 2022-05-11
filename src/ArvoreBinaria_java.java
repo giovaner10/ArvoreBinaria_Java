@@ -16,5 +16,12 @@ public class ArvoreBinaria_java<T extends Comparable<T>> {
         if(atual == null){
             return novoNo;
         }
+        else if(novoNo.getConteudo().compareTo(atual.getConteudo()) < 0){
+            atual.setNoEsq(inserir(atual.getNoEsq(), novoNo));
+        }else {
+            atual.setNoDir(inserir(atual.getNoDir(), novoNo));
+
+        }
+        return atual;
     }
 }
